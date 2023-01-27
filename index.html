@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .container{
+        display: grid;
+        grid-template-areas: 
+            'head head head'
+            'divleft main divright'
+            'footer footer footer';
+        color: black;
+        padding: 4px;
+    }
+    .container>div{
+        border: 3px solid blueviolet;
+        padding: 10px;
+
+    }
+    .divleft{
+        border-left: none;
+        margin-left: none;
+
+    }
+    .divright{
+        border-right: none;
+    }
+    nav{
+        text-align: center;
+        /* padding-right: 55px; */
+    }
+    .header{
+        grid-area: head;
+    }
+    .main{
+        grid-area: main;
+    }
+    .f1{
+        grid-area: f1;
+        text-align: center;
+    }
+    .f2{
+        text-align: center;
+        grid-area: f2;
+    }
+    .footer{
+        grid-area: footer;
+        display: grid;
+        grid-template-areas: 'f1 f2';
+    }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <a href="">home</a>
+                <a href="">qualification</a>
+                <a href="">dob</a>
+            </nav>
+        </div>
+        <div class="divleft">
+                <p>All links in picture</p>
+                <blockquote></blockquote>
+                <li><a href="bio-data.html">Bio Data</a></li>
+                <li><a href="hobby.html">Hobbies</a></li>
+                <li><a href="interest.html">Integerst</a></li>
+
+
+        </div>
+        <div class="main">
+                <img src="/portimg.webp" alt="portfolio image" class="center" id="img" usemap="#workmap">
+                <map name="workmap">
+                    <area shape="circle" coords="387,157,50" alt="bio-data" href="bio-data.html">
+                    <area shape="rect" coords="528,206,478,267" alt="hoobies" href="hobby.html">
+                    <area shape="circle" coords="243,300,30px" alt="cup" href="interest.html">
+                </map>
+        </div>
+        <div class="divright">
+                <p><strong>DESCRIPTION</strong></p>
+                <pre>           This is a image which consist of three hyperlinks where 
+        if you touch face of human it will navigate to bio data , then phone
+        displays hobbies of man and cup in his right hand displays the 
+        interest of the person
+                </pre>
+        </div>
+        <div class="footer">
+            
+                <a href="" class="f1">about us</a>
+                <a href="" class="f2">terms and conditions</a>
+            
+
+        </div>
+        <p id="coords"></p>
+    </div>
+    <script>
+        var img = document.getElementById('img');
+        var coords = document.getElementById('coords');
+        img.addEventListener('mousemove', function (event) {
+
+            coords.innerHTML = ("x: " + event.offsetX + "<br/>y: " + event.offsetY);
+        });
+    </script>
+
+</body>
